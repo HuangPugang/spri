@@ -18,6 +18,7 @@ public class UserService {
     @Autowired
     UserMapper userMapper;
 
+    @Transactional
     public int insert(User user) {
         return userMapper.insert(user);
 

@@ -42,8 +42,8 @@ public class MybApplicationTests {
 
         userService.insert(user);
 //		userService.insert(user2);
-//		List<User> users = userMapper.findAll();
-//		System.out.println(users.toString());
+		List<User> users = userService.findAll();
+		System.out.println(users.toString());
 
         // 创建三个User，并验证User总数
 //        teacherRepository.save(new Teacher(1L, "didi", 30));
@@ -71,6 +71,6 @@ public class MybApplicationTests {
      */
     @Test
     public void rabbitTest() {
-        sender.sendTest();
+//        sender.sendTest();
     }
 }
