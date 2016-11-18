@@ -2,6 +2,8 @@ package com.example.mapper;
 
 import com.example.domain.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -11,5 +13,6 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
+    int insert(User user);
     List<User> findAll();
 }

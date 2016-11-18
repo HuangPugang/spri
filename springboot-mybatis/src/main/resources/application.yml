@@ -20,8 +20,25 @@ spring:
         testOnReturn: false
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
+
+
+    data:
+        mongodb:
+            host: 192.168.56.101
+            port: 27017
+            database: local
+
+
+    rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
+
+
 mybatis:
     mapper-locations: classpath*:**/com.example.mapper/*.xml
+
 
 
 
