@@ -1,6 +1,7 @@
 package com.example.mq;
 
 import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +14,7 @@ import java.util.Date;
 public class Sender {
 
     @Autowired
-    AmqpTemplate rabbitTemplate;
+    RabbitTemplate rabbitTemplate;
 
 
 
@@ -21,5 +22,9 @@ public class Sender {
         String context = "hello "+new Date();
         System.out.println("Sender:"+context);
         rabbitTemplate.convertAndSend("hello",context);
+    }
+
+    public void sendTest(){
+        rabbitTemplate.convertAndSend("topic_bike","bike.haha","我是测试测试");
     }
 }

@@ -12,7 +12,6 @@ import java.util.List;
  * Created by paul on 16/11/11.
  */
 @Service
-@Transactional
 public class UserService {
 
 
