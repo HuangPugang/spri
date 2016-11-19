@@ -25,6 +25,6 @@ public class Sender {
     }
 
     public void sendTest(){
-        rabbitTemplate.convertAndSend("topic_bike","bike.haha","我是测试测试");
+        rabbitTemplate.convertAndSend("topic_bike","bike.haha","我是测试测试rabbit");
     }
 }

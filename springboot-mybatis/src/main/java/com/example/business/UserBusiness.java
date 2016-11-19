@@ -29,7 +29,7 @@ public class UserBusiness {
         user.setName("haha");
 
         userService.insert(user);
-        userService.insert(user2);
+//        userService.insert(user2);
         List<User> users = userService.findAll();
         System.out.println(users.toString());
     }

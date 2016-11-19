@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.business.UserBusiness;
 import com.example.mq.Sender;
 import com.example.repository.TeacherRepository;
 import com.example.service.UserCacheService;
@@ -26,8 +27,9 @@ public class MybApplicationTests {
     @Autowired
     UserCacheService userCacheService;
 
+    @Autowired
+    UserBusiness userBusiness;
     @Test
-    @Transactional
     public void contextLoads() {
 //        Random random = new Random();
 //        User user = new User();
@@ -50,8 +52,11 @@ public class MybApplicationTests {
 //        Teacher teacher = teacherRepository.findById(2L);
 //        System.out.println(teacher.toString());
 
-        userCacheService.findUser(1L,"哈哈","嘿嘿");
+//        userCacheService.findUser(1L,"哈哈","嘿嘿");
+
+        userBusiness.testTransitional();
     }
+
 
 
     @Autowired
@@ -71,7 +76,7 @@ public class MybApplicationTests {
      */
     @Test
     public void rabbitTest() {
-//        sender.sendTest();
+        sender.sendTest();
         redisService.set("textss","test22");
         System.out.println(redisService.get("textss"));
     }
