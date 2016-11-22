@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class BikeReceiver {
+
     @RabbitListener(queues = "bike.test")
     public void receive(String msg) {
 

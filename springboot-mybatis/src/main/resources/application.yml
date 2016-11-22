@@ -51,6 +51,7 @@ mybatis:
     mapper-locations: classpath*:**/com.example.mapper/*.xml
 
 
-
+server:
+    port: 8081
 
 
