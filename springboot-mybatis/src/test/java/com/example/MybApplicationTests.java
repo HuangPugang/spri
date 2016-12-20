@@ -1,17 +1,22 @@
 package com.example;
 
 import com.example.business.UserBusiness;
+import com.example.domain.*;
 import com.example.mq.Sender;
+import com.example.repository.LocationRepository;
 import com.example.repository.TeacherRepository;
 import com.example.service.UserCacheService;
 import com.example.service.RedisService;
 import com.example.service.UserService;
+import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -29,6 +34,7 @@ public class MybApplicationTests {
 
     @Autowired
     UserBusiness userBusiness;
+
     @Test
     public void contextLoads() {
 //        Random random = new Random();
@@ -54,9 +60,8 @@ public class MybApplicationTests {
 
 //        userCacheService.findUser(1L,"哈哈","嘿嘿");
 
-        userBusiness.testTransitional();
+//        userBusiness.testTransitional();
     }
-
 
 
     @Autowired
@@ -68,19 +73,47 @@ public class MybApplicationTests {
     @Test
     public void rabbitHello() {
 //        sender.send();
+//        teacherRepository.save(new Teacher(1L,"lijian",49));
+//        teacherRepository.save(new Teacher(2L,"wang",49));
+//        teacherRepository.save(new Teacher(3L,"leng",49));
+//        teacherRepository.save(new Teacher(4L,"guoos",49));
     }
+
     @Autowired
     RedisService redisService;
+    Logger logger = Logger.getLogger(getClass());
+
     /**
      * 后台配置
      */
     @Test
     public void rabbitTest() {
-        sender.sendTest();
-        redisService.set("textss","test22");
-        System.out.println(redisService.get("textss"));
+//        logger.error("错误信息");
+//        sender.sendTest();
+//        redisService.set("textss", "test22");
+//        System.out.println(redisService.get("textss"));
     }
 
 
+    @Autowired
+    LocationRepository locationRepository;
+
+
+    @Test
+    public void addLocation() {
+//        for (int i = 0; i < 50; i++) {
+//            locationRepository.save(new Location("1000000" + i, new Coordinate(120.0 + i * 0.001, 30.0 - i * 0.001), "徐汇区"));
+//            locationRepository.save(new Location("1000000" + i, new Coordinate(120.0 - i * 0.001, 30.0 + i * 0.001), "徐汇区"));
+//            locationRepository.save(new Location("1000000" + i, new Coordinate(120.0 - i * 0.001, 30.0 - i * 0.001), "徐汇区"));
+//            locationRepository.save(new Location("1000000" + i, new Coordinate(120.0 + i * 0.001, 30.0 + i * 0.001), "徐汇区"));
+//        }
+    }
+
+
+
+    @Test
+    public void findUbook(){
+        userService.insert(new User(2,"黄","h9911",10));
+    }
 
 }

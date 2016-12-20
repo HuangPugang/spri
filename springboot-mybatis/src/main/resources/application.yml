@@ -1,4 +1,4 @@
-debug: true
+debug: false
 spring:
     datasource:
         name: redpackage
@@ -23,35 +23,38 @@ spring:
         maxOpenPreparedStatements: 20
 
 
-    data:
-        mongodb:
-            host: 192.168.56.101
-            port: 27017
-            database: local
+#    data:
+#        mongodb:
+#            host: 192.168.56.103
+#            port: 27018
+#            database: account
 
 
-    rabbitmq:
-        host: 127.0.0.1
-        port: 5672
-        username: guest
-        password: guest
+#    rabbitmq:
+#        host: 127.0.0.1
+#        port: 5672
+#        username: guest
+#        password: guest
 
 
-    redis:
-        host: 127.0.0.1
-        port: 6379
-        pool:
-            max-active: 8
-            min-idle: 0
-            max-idle: 8
-            max-wait: 1
+#    redis:
+#        host: 120.26.202.89
+#        port: 6379
+#        password: 123456
+#        pool:
+#            max-active: 8
+#            min-idle: 0
+#            max-idle: 8
+#            max-wait: 1
 
 
 mybatis:
-    mapper-locations: classpath*:**/com.example.mapper/*.xml
+    mapper-locations: "classpath*:**/com.example.mapper/*.xml"
 
 
 server:
     port: 8081
+
+
 
 

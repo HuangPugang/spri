@@ -1,10 +1,15 @@
 package com.example.domain;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 /**
  * Created by paul on 16/11/18.
  */
+@Document(collection = "t_teacher")
 public class Teacher {
-    private Long id ;
+    @Id
+    private Long id;
     private String name;
     private Integer age;
 

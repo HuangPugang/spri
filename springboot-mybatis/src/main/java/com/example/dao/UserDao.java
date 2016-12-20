@@ -1,34 +1,32 @@
-package com.example.service;
+package com.example.dao;
 
-import com.example.dao.UserDao;
 import com.example.domain.User;
-import com.example.domain.UserBook;
 import com.example.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 /**
- * Created by paul on 16/11/11.
+ * Created by paul on 16/12/5.
  */
-@Service
-public class UserService {
+@Repository
+public class UserDao {
 
 
     @Autowired
-    UserDao userDao;
+    UserMapper userMapper;
 
 
     @Transactional
     public int insert(User user) {
-        return userDao.insert(user);
+        return userMapper.insert(user);
 
     }
 
     public List<User> findAll() {
-        return userDao.findAll();
+        return userMapper.findAll();
     }
 
 

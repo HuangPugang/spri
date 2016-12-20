@@ -9,11 +9,15 @@
         <result column="email" property="email"/>
     </resultMap>
 
+
+
+
     <insert id="insert" useGeneratedKeys="true" keyProperty="id">
-        insert into t_user(id,name,age,email)values(#{id},#{name},#{age},#{email});
+        insert into user(id,name,age,email)values(#{id},#{name},#{age},#{email});
     </insert>
     <select id="findAll" resultMap="BaseResultMapper">
-        select * from t_user
+        select * from user
     </select>
+
 
 </mapper>
