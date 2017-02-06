@@ -1,0 +1,6 @@
+zuul:
+  routes:
+    find:
+      path: /find/**
+      serviceId: compute-service
+      stripPrefix: false
