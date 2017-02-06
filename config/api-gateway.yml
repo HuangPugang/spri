@@ -1,6 +1,6 @@
 zuul:
   routes:
     find:
-      path: /find/**
+      path: /demo/**
       serviceId: compute-service
       stripPrefix: false

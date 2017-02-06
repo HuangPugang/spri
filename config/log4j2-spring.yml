@@ -10,16 +10,16 @@ Configuration:
       - name: log.level.xjj
         value: trace
       - name: log.path
-        value: /Users/paul/Desktop/log
+        value: /Users/Paul/Desktop/log
       - name: project.name
-        value: projname
+        value: ${spring:spring.application.name}
 
   Appenders:
     Console:  #输出到控制台
       name: CONSOLE
       target: SYSTEM_OUT
       PatternLayout:
-        Pattern: '[%d]\t%p\t[${spring:spring.application.name}]\t%c{1}\t%M\t[%t]\t[%X{reqId}]\t--\t%m%n'
+        Pattern: '[%d]\t%p\t[${project.name}]\t%c{1}\t%M\t[%t]\t[%X{reqId}]\t--\t%m%n'
     RollingFile: # 输出到文件，超过128MB归档
       - name: infoRollingFile
         ThresholdFilter:
