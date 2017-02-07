@@ -5,6 +5,6 @@ zuul:
       serviceId: find-service
 
     compute:
-      path: /compute-service/**
+      path: /compute/**
       serviceId: compu-service
-      stripPrefix: false
+      stripPrefix: true
