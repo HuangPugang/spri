@@ -5,6 +5,6 @@ zuul:
       serviceId: find-service
 
     compute:
-      path: /compute/**
+      path: /compute-service/** #此处最好保持与war包一致
       serviceId: compu-service
       stripPrefix: false
