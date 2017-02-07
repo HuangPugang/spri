@@ -1,6 +1,10 @@
 zuul:
   routes:
     find:
-      path: /demo/**
-      serviceId: compute-service
+      path: /find/**
+      serviceId: find-service
+
+    compute:
+      path: /compute-service/**
+      serviceId: compu-service
       stripPrefix: false
